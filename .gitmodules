@@ -1,3 +1,13 @@
 [submodule "libs/hbb_common"]
 	path = libs/hbb_common
-	url = https://github.com/rustdesk/hbb_common
+	url = https://github.com/empso11/hbb_common
+
+
+# git checkout master
+# git tag -f nightly
+# git push origin nightly --force
+
+
+# git checkout master
+# git reset --hard 1.4.0
+# git push origin master --force
