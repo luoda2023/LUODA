@@ -231,7 +231,7 @@ class ServiceNotRunningNotification extends StatelessWidget {
                 .marginOnly(bottom: 8),
             ElevatedButton.icon(
                 icon: const Icon(Icons.play_arrow),
-                // onPressed: () {
+                onPressed: () {
                 //   if (gFFI.userModel.userName.value.isEmpty &&
                 //       bind.mainGetLocalOption(key: "show-scam-warning") !=
                 //           "N") {
@@ -239,7 +239,7 @@ class ServiceNotRunningNotification extends StatelessWidget {
                 //   } else {
                 //     serverModel.toggleService();
                 //   }
-                // },  //会弹出警告
+                },  //会弹出警告
                 label: Text(translate("Start service")))
           ],
         ));
