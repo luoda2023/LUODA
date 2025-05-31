@@ -3,9 +3,9 @@
 	url = https://github.com/empso11/hbb_common
 
 
-git checkout master
-git tag -f nightly
-git push origin nightly --force
+# git checkout master
+# git tag -f nightly
+# git push origin nightly --force
 
 
 # git checkout master
