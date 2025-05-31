@@ -245,12 +245,12 @@ class ServiceNotRunningNotification extends StatelessWidget {
 }
 
 class ScamWarningDialog extends StatefulWidget {
-  final ServerModel serverModel;
+  // final ServerModel serverModel;
 
-  // ScamWarningDialog({required this.serverModel});//弹出警告？
+  // // ScamWarningDialog({required this.serverModel});//弹出警告？
 
-  @override
-  ScamWarningDialogState createState() => ScamWarningDialogState();
+  // @override
+  // ScamWarningDialogState createState() => ScamWarningDialogState();
 }
 
 class ScamWarningDialogState extends State<ScamWarningDialog> {
