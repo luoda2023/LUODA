@@ -233,11 +233,11 @@ class ServiceNotRunningNotification extends StatelessWidget {
                 icon: const Icon(Icons.play_arrow),
                 onPressed: () {
                   if (gFFI.userModel.userName.value.isEmpty/* && bind.mainGetLocalOption(key: "show-scam-warning") !="N"*/) {
-                    showScamWarning(context, serverModel);
-                  } else {
+                  //   showScamWarning(context, serverModel);
+                  // } else {
                     serverModel.toggleService();
                   }
-                },  //会弹出警告
+                },  
                 label: Text(translate("Start service")))
           ],
         ));
@@ -251,6 +251,7 @@ class ScamWarningDialog extends StatefulWidget {
 
   // @override
   // ScamWarningDialogState createState() => ScamWarningDialogState();
+  return ScamWarningDialog(serverModel: serverModel);
 }
 
 class ScamWarningDialogState extends State<ScamWarningDialog> {
