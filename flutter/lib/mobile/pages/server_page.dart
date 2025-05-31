@@ -572,14 +572,19 @@ class _PermissionCheckerState extends State<PermissionChecker> {
                       label: Text(translate("Stop service")))
                   .marginOnly(bottom: 8)
               : SizedBox.shrink(),
+          // PermissionRow(
+          //     translate("Screen Capture"),
+          //     serverModel.mediaOk,
+          //     !serverModel.mediaOk &&
+          //             gFFI.userModel.userName.value.isEmpty &&
+          //             bind.mainGetLocalOption(key: "show-scam-warning") != "N"
+          //             ? () => showScamWarning(context, serverModel)
+          //         : serverModel.toggleService),
           PermissionRow(
-              translate("Screen Capture"),
-              serverModel.mediaOk,
-              !serverModel.mediaOk &&
-                      gFFI.userModel.userName.value.isEmpty &&
-                      bind.mainGetLocalOption(key: "show-scam-warning") != "N"
-                  ? () => showScamWarning(context, serverModel)
-                  : serverModel.toggleService),
+                  translate("Screen Capture"),
+                  serverModel.mediaOk,
+                  serverModel.toggleService
+                ),
           PermissionRow(translate("Input Control"), serverModel.inputOk,
               serverModel.toggleInput),
           PermissionRow(translate("Transfer file"), serverModel.fileOk,
