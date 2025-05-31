@@ -51,17 +51,17 @@ class PeersModelName {
   static const String group = 'group peer';
 }
 
-/// for peer search text, global obs value
+/// 对于同行搜索文本，全局 obs 值
 final peerSearchText = "".obs;
 
-/// for peer sort, global obs value
+/// 对于同行排序，全局 obs 值
 RxString? _peerSort;
 RxString get peerSort {
   _peerSort ??= bind.getLocalFlutterOption(k: kOptionPeerSorting).obs;
   return _peerSort!;
 }
 
-// list for listener
+// 听众名单
 RxList<RxString> get obslist => [peerSearchText, peerSort].obs;
 
 final peerSearchTextController =
@@ -83,7 +83,7 @@ class _PeersView extends StatefulWidget {
   _PeersViewState createState() => _PeersViewState();
 }
 
-/// State for the peer widget.
+/// 对等小部件的状态。
 class _PeersViewState extends State<_PeersView>
     with WindowListener, WidgetsBindingObserver {
   static const int _maxQueryCount = 3;
@@ -132,11 +132,11 @@ class _PeersViewState extends State<_PeersView>
 
   @override
   void onWindowBlur() {
-    // We need this comparison because window restore (on Windows) also triggers `onWindowBlur()`.
-    // Maybe it's a bug of the window manager, but the source code seems to be correct.
-    //
-    // Although `onWindowRestore()` is called after `onWindowBlur()` in my test,
-    // we need the following comparison to ensure that `_isActive` is true in the end.
+// 我们需要进行此比较，因为窗口还原（在 Windows 上）也会触发 `onWindowBlur()`。
+// 这也许是窗口管理器的一个错误，但源代码似乎是正确的。
+//
+// 虽然在我的测试中 `onWindowRestore()` 是在 `onWindowBlur()` 之后调用的，
+// 但我们仍然需要进行以下比较，以确保 `_isActive` 最终为 true。
     if (isWindows &&
         DateTime.now().difference(_lastWindowRestoreTime) <
             const Duration(milliseconds: 300)) {
@@ -148,8 +148,8 @@ class _PeersViewState extends State<_PeersView>
 
   @override
   void onWindowRestore() {
-    // Window restore (on MacOS and Linux) also triggers `onWindowFocus()`.
-    // But on Windows, it triggers `onWindowBlur()`, mybe it's a bug of the window manager.
+ // 窗口还原（在 MacOS 和 Linux 上）也会触发 `onWindowFocus()`。
+// 但在 Windows 上，它会触发 `onWindowBlur()`，这可能是窗口管理器的一个错误。
     if (!isWindows) return;
     _queryCount = 0;
     _isActive = true;
