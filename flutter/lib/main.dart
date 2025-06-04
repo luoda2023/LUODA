@@ -31,7 +31,7 @@ import 'models/platform_model.dart';
 import 'package:flutter_hbb/plugin/handlers.dart'
     if (dart.library.html) 'package:flutter_hbb/web/plugin/handlers.dart';
 
-/// Basic window and launch properties.
+/// 基本窗口和启动属性。
 int? kWindowId;
 WindowType? kWindowType;
 late List<String> kBootArgs;
@@ -47,7 +47,7 @@ Future<void> main(List<String> args) async {
     runMobileApp();
     return;
   }
-  // main window
+  // 主窗口
   if (args.isNotEmpty && args.first == 'multi_window') {
     kWindowId = int.parse(args[1]);
     stateGlobal.setWindowId(kWindowId!);
@@ -58,8 +58,8 @@ Future<void> main(List<String> args) async {
         ? <String, dynamic>{}
         : jsonDecode(args[2]) as Map<String, dynamic>;
     int type = argument['type'] ?? -1;
-    // to-do: No need to parse window id ?
-    // Because stateGlobal.windowId is a global value.
+    // 待办事项：不需要解析窗口id吗？
+    // 因为stateGlobal.windowId是一个全局值。
     argument['windowId'] = kWindowId;
     kWindowType = type.windowType;
     switch (kWindowType) {

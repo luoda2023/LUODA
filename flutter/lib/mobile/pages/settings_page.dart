@@ -350,15 +350,15 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                 });
               },
       ),
-      SettingsTile.switchTile(
-        title: Row(children: [
-          Expanded(child: Text(translate('Use IP Whitelisting'))),
-          Offstage(
-                  offstage: !_onlyWhiteList,
-                  child: const Icon(Icons.warning_amber_rounded,
-                      color: Color.fromARGB(255, 255, 204, 0)))
-              .marginOnly(left: 5)
-        ]),
+      // SettingsTile.switchTile(
+      //   title: Row(children: [
+      //     Expanded(child: Text(translate('Use IP Whitelisting'))),
+      //     Offstage(
+      //             offstage: !_onlyWhiteList,
+      //             child: const Icon(Icons.warning_amber_rounded,
+      //                 color: Color.fromARGB(255, 255, 204, 0)))
+      //         .marginOnly(left: 5)
+      //   ]),
         initialValue: _onlyWhiteList,
         onToggle: (_) async {
           update() async {
@@ -452,18 +452,18 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    Text(translate("auto_disconnect_option_tip")),
-                    Offstage(
-                        offstage: !_allowAutoDisconnect,
-                        child: Text(
-                          '${_autoDisconnectTimeout.isEmpty ? '10' : _autoDisconnectTimeout} min',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        )),
-                  ])),
+              // Expanded(
+              //     child: Column(
+              //         crossAxisAlignment: CrossAxisAlignment.start,
+              //         children: [
+              //       Text(translate("auto_disconnect_option_tip")),
+              //       Offstage(
+              //           offstage: !_allowAutoDisconnect,
+              //           child: Text(
+              //             '${_autoDisconnectTimeout.isEmpty ? '10' : _autoDisconnectTimeout} min',
+              //             style: Theme.of(context).textTheme.bodySmall,
+              //           )),
+              //     ])),
               Offstage(
                   offstage: !_allowAutoDisconnect,
                   child: IconButton(
@@ -723,58 +723,58 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                     },
             ),
           ]),
-        if (isAndroid)
-          SettingsSection(
-            title: Text(translate("Recording")),
-            tiles: [
-              if (!outgoingOnly)
-                SettingsTile.switchTile(
-                  title:
-                      Text(translate('Automatically record incoming sessions')),
-                  initialValue: _autoRecordIncomingSession,
-                  onToggle: isOptionFixed(kOptionAllowAutoRecordIncoming)
-                      ? null
-                      : (v) async {
-                          await bind.mainSetOption(
-                              key: kOptionAllowAutoRecordIncoming,
-                              value: bool2option(
-                                  kOptionAllowAutoRecordIncoming, v));
-                          final newValue = option2bool(
-                              kOptionAllowAutoRecordIncoming,
-                              await bind.mainGetOption(
-                                  key: kOptionAllowAutoRecordIncoming));
-                          setState(() {
-                            _autoRecordIncomingSession = newValue;
-                          });
-                        },
-                ),
-              if (!incomingOnly)
-                SettingsTile.switchTile(
-                  title:
-                      Text(translate('Automatically record outgoing sessions')),
-                  initialValue: _autoRecordOutgoingSession,
-                  onToggle: isOptionFixed(kOptionAllowAutoRecordOutgoing)
-                      ? null
-                      : (v) async {
-                          await bind.mainSetLocalOption(
-                              key: kOptionAllowAutoRecordOutgoing,
-                              value: bool2option(
-                                  kOptionAllowAutoRecordOutgoing, v));
-                          final newValue = option2bool(
-                              kOptionAllowAutoRecordOutgoing,
-                              bind.mainGetLocalOption(
-                                  key: kOptionAllowAutoRecordOutgoing));
-                          setState(() {
-                            _autoRecordOutgoingSession = newValue;
-                          });
-                        },
-                ),
-              SettingsTile(
-                title: Text(translate("Directory")),
-                description: Text(bind.mainVideoSaveDirectory(root: false)),
-              ),
-            ],
-          ),
+        // if (isAndroid)
+        //   SettingsSection(
+        //     title: Text(translate("Recording")),
+        //     tiles: [
+        //       if (!outgoingOnly)
+        //         SettingsTile.switchTile(
+        //           title:
+        //               Text(translate('Automatically record incoming sessions')),
+        //           initialValue: _autoRecordIncomingSession,
+        //           onToggle: isOptionFixed(kOptionAllowAutoRecordIncoming)
+        //               ? null
+        //               : (v) async {
+        //                   await bind.mainSetOption(
+        //                       key: kOptionAllowAutoRecordIncoming,
+        //                       value: bool2option(
+        //                           kOptionAllowAutoRecordIncoming, v));
+        //                   final newValue = option2bool(
+        //                       kOptionAllowAutoRecordIncoming,
+        //                       await bind.mainGetOption(
+        //                           key: kOptionAllowAutoRecordIncoming));
+        //                   setState(() {
+        //                     _autoRecordIncomingSession = newValue;
+        //                   });
+        //                 },
+        //         ),
+        //       if (!incomingOnly)
+        //         SettingsTile.switchTile(
+        //           title:
+        //               Text(translate('Automatically record outgoing sessions')),
+        //           initialValue: _autoRecordOutgoingSession,
+        //           onToggle: isOptionFixed(kOptionAllowAutoRecordOutgoing)
+        //               ? null
+        //               : (v) async {
+        //                   await bind.mainSetLocalOption(
+        //                       key: kOptionAllowAutoRecordOutgoing,
+        //                       value: bool2option(
+        //                           kOptionAllowAutoRecordOutgoing, v));
+        //                   final newValue = option2bool(
+        //                       kOptionAllowAutoRecordOutgoing,
+        //                       bind.mainGetLocalOption(
+        //                           key: kOptionAllowAutoRecordOutgoing));
+        //                   setState(() {
+        //                     _autoRecordOutgoingSession = newValue;
+        //                   });
+        //                 },
+        //         ),
+        //       SettingsTile(
+        //         title: Text(translate("Directory")),
+        //         description: Text(bind.mainVideoSaveDirectory(root: false)),
+        //       ),
+        //     ],
+        //   ),
         // if (isAndroid &&
         //     !disabledSettings &&
         //     !outgoingOnly &&
@@ -800,26 +800,26 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
         SettingsSection(
           title: Text(translate("About")),
           tiles: [
-            SettingsTile(
-                onPressed: (context) async {
-                  await launchUrl(Uri.parse(url));
-                },
-                title: Text(translate("Version: ") + version),
-                value: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Text('rustdesk.com',
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                      )),
-                ),
-                leading: Icon(Icons.info)),
-            SettingsTile(
-                title: Text(translate("Build Date")),
-                value: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Text(_buildDate),
-                ),
-                leading: Icon(Icons.query_builder)),
+            // SettingsTile(
+            //     onPressed: (context) async {
+            //       await launchUrl(Uri.parse(url));
+            //     },
+            //     title: Text(translate("Version: ") + version),
+            //     value: Padding(
+            //       padding: EdgeInsets.symmetric(vertical: 8),
+            //       child: Text('rustdesk.com',
+            //           style: TextStyle(
+            //             decoration: TextDecoration.underline,
+            //           )),
+            //     ),
+            //     leading: Icon(Icons.info)),
+            // SettingsTile(
+            //     title: Text(translate("Build Date")),
+            //     value: Padding(
+            //       padding: EdgeInsets.symmetric(vertical: 8),
+            //       child: Text(_buildDate),
+            //     ),
+            //     leading: Icon(Icons.query_builder)),
             if (isAndroid)
               SettingsTile(
                   onPressed: (context) => onCopyFingerprint(_fingerprint),
@@ -832,7 +832,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             SettingsTile(
               title: Text(translate("Privacy Statement")),
               onPressed: (context) =>
-                  launchUrlString('https://rustdesk.com/privacy.html'),
+                  launchUrlString('https://www.xmtjca.cn/privacy.html'),
               leading: Icon(Icons.privacy_tip),
             )
           ],

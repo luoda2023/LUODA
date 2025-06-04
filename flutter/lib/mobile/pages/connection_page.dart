@@ -35,9 +35,9 @@ class ConnectionPage extends StatefulWidget implements PageShape {
   State<ConnectionPage> createState() => _ConnectionPageState();
 }
 
-/// State for the connection page.
+/// 连接页面的状态。
 class _ConnectionPageState extends State<ConnectionPage> {
-  /// Controller for the id input bar.
+  /// ID 输入栏的控制器。
   final _idController = IDTextEditingController();
   final RxBool _idEmpty = true.obs;
 
@@ -96,8 +96,8 @@ class _ConnectionPageState extends State<ConnectionPage> {
     ).marginOnly(top: 2, left: 10, right: 10);
   }
 
-  /// Callback for the connect button.
-  /// Connects to the selected peer.
+  /// 连接按钮的回调。
+  /// 连接到选定的对等点。
   void onConnect() {
     var id = _idController.id;
     connect(context, id);
@@ -111,14 +111,14 @@ class _ConnectionPageState extends State<ConnectionPage> {
       }
 
       final textLength = _idEditingController.value.text.length;
-      // Select all to facilitate removing text, just following the behavior of address input of chrome.
+      // 全选，方便删除文字，就跟chrome地址输入的行为一样。
       _idEditingController.selection =
           TextSelection(baseOffset: 0, extentOffset: textLength);
     }
   }
 
-  /// UI for software update.
-  /// If _updateUrl] is not empty, shows a button to update the software.
+  /// 软件更新的用户界面。
+  /// 如果[_updateUrl]不为空，则显示更新软件的按钮。
   Widget _buildUpdateUI(String updateUrl) {
     return updateUrl.isEmpty
         ? const SizedBox(height: 0)

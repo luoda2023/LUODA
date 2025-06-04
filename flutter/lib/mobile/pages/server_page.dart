@@ -541,7 +541,7 @@ class ServerInfo extends StatelessWidget {
             //               })
             //         ])
             // ]).marginOnly(left: 40, bottom: 15),
-            // ConnectionStateNotification()
+            ConnectionStateNotification()
           ],
         ));
   }

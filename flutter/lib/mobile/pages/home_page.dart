@@ -31,7 +31,7 @@ class HomePageState extends State<HomePage> {
   int _chatPageTabIndex = -1;
   bool get isChatPageCurrentTab => isAndroid
       ? _selectedIndex == _chatPageTabIndex
-      : false; // change this when ios have chat page
+      : false; // 当 iOS 有聊天页面时更改此设置
 
   void refreshPages() {
     setState(() {
@@ -45,16 +45,28 @@ class HomePageState extends State<HomePage> {
     initPages();
   }
 
+  // void initPages() {
+  //   _pages.clear();
+  //   if (!bind.isIncomingOnly()) {
+  //     _pages.add(ConnectionPage(
+  //       appBarActions: [],
+  //     ));
+  //   }
+  //   if (isAndroid && !bind.isOutgoingOnly()) {
+  //     _chatPageTabIndex = _pages.length;
+  //     _pages.addAll([ChatPage(type: ChatPageType.mobileMain), ServerPage()]);
+  //   }
+  //   _pages.add(SettingsPage());
+  // }
   void initPages() {
     _pages.clear();
     if (!bind.isIncomingOnly()) {
-      _pages.add(ConnectionPage(
-        appBarActions: [],
-      ));
+      // _pages.add(ConnectionPage(appBarActions: []));
+      _pages.add(ServerPage()); 
     }
     if (isAndroid && !bind.isOutgoingOnly()) {
       _chatPageTabIndex = _pages.length;
-      _pages.addAll([ChatPage(type: ChatPageType.mobileMain), ServerPage()]);
+      _pages.add(ChatPage(type: ChatPageType.mobileMain));
     }
     _pages.add(SettingsPage());
   }
@@ -73,7 +85,7 @@ class HomePageState extends State<HomePage> {
           return false;
         },
         child: Scaffold(
-          // backgroundColor: MyTheme.grayBg,
+          // 背景颜色：MyTheme.grayBg，
           appBar: AppBar(
             centerTitle: true,
             title: appTitle(),
@@ -90,14 +102,14 @@ class HomePageState extends State<HomePage> {
             selectedItemColor: MyTheme.accent, //
             unselectedItemColor: MyTheme.darkGray,
             onTap: (index) => setState(() {
-              // close chat overlay when go chat page
+              // 进入聊天页面时关闭聊天覆盖
               if (_selectedIndex != index) {
                 _selectedIndex = index;
                 if (isChatPageCurrentTab) {
                   gFFI.chatModel.hideChatIconOverlay();
                   gFFI.chatModel.hideChatWindowOverlay();
                   gFFI.chatModel.mobileClearClientUnread(
-                      gFFI.chatModel.currentKey.connId);
+                  gFFI.chatModel.currentKey.connId);
                 }
               }
             }),
@@ -163,7 +175,7 @@ class WebHomePage extends StatelessWidget {
     stateGlobal.isInMainPage = true;
     handleUnilink(context);
     return Scaffold(
-      // backgroundColor: MyTheme.grayBg,
+      // 背景颜色：MyTheme.grayBg，
       appBar: AppBar(
         centerTitle: true,
         title: Text("${bind.mainGetAppNameSync()} (Preview)"),
