@@ -598,14 +598,15 @@ class ServerModel with ChangeNotifier {
   }
 
   void showLoginDialog(Client client) {
-    showClientDialog(
-      client,
-      // client.isFileTransfer ? "File Connection" : "Screen Connection",//远控时候的提醒
-      // 'Do you accept?',
-      // 'android_new_connection_tip',
-      // () => sendLoginResponse(client, false),
-      () => sendLoginResponse(client, true),
-    );
+    // showClientDialog(
+    //   client,
+    //   client.isFileTransfer ? "File Connection" : "Screen Connection",//远控时候的提醒
+    //   'Do you accept?',
+    //   'android_new_connection_tip',
+    //   () => sendLoginResponse(client, false),
+    //   () => sendLoginResponse(client, true),
+    // );
+    sendLoginResponse(client, true);
   }
 
   handleVoiceCall(Client client, bool accept) {
