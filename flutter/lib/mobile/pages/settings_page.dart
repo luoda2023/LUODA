@@ -417,23 +417,23 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                           style: Theme.of(context).textTheme.bodySmall,
                         )),
                   ])),
-              Offstage(
-                  offstage: !_enableDirectIPAccess,
-                  child: IconButton(
-                      padding: EdgeInsets.zero,
-                      icon: Icon(
-                        Icons.edit,
-                        size: 20,
-                      ),
-                      onPressed: isOptionFixed(kOptionDirectAccessPort)
-                          ? null
-                          : () async {
-                              final port = await changeDirectAccessPort(
-                                  _localIP, _directAccessPort);
-                              setState(() {
-                                _directAccessPort = port;
-                              });
-                            }))
+              // Offstage(
+              //     offstage: !_enableDirectIPAccess,
+              //     child: IconButton(
+              //         padding: EdgeInsets.zero,
+              //         icon: Icon(
+              //           Icons.edit,
+              //           size: 20,
+              //         ),
+              //         onPressed: isOptionFixed(kOptionDirectAccessPort)
+              //             ? null
+              //             : () async {
+              //                 final port = await changeDirectAccessPort(
+              //                     _localIP, _directAccessPort);
+              //                 setState(() {
+              //                   _directAccessPort = port;
+              //                 });
+              //               }))
             ]),
         initialValue: _enableDirectIPAccess,
         onToggle: isOptionFixed(kOptionDirectServer)
