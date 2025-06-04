@@ -359,20 +359,20 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
       //                 color: Color.fromARGB(255, 255, 204, 0)))
       //         .marginOnly(left: 5)
       //   ]),
-        initialValue: _onlyWhiteList,
-        onToggle: (_) async {
-          update() async {
-            final onlyWhiteList = whitelistNotEmpty();
-            if (onlyWhiteList != _onlyWhiteList) {
-              setState(() {
-                _onlyWhiteList = onlyWhiteList;
-              });
-            }
-          }
+      //   initialValue: _onlyWhiteList,
+      //   onToggle: (_) async {
+      //     update() async {
+      //       final onlyWhiteList = whitelistNotEmpty();
+      //       if (onlyWhiteList != _onlyWhiteList) {
+      //         setState(() {
+      //           _onlyWhiteList = onlyWhiteList;
+      //         });
+      //       }
+      //     }
 
-          changeWhiteList(callback: update);
-        },
-      ),
+      //     changeWhiteList(callback: update);
+      //   },
+      // ),
       SettingsTile.switchTile(
         title: Text('${translate('Adaptive bitrate')} (beta)'),
         initialValue: _enableAbr,
