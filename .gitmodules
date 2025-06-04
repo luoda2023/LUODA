@@ -1,6 +1,6 @@
-# [submodule "libs/hbb_common"]
-# 	path = libs/hbb_common
-# 	url = https://github.com/empso11/hbb_common
+[submodule "libs/hbb_common"]
+	path = libs/hbb_common
+	url = https://github.com/empso11/hbb_common
 
 
 # git checkout master
