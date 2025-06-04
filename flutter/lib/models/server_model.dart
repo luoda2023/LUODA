@@ -407,6 +407,7 @@ class ServerModel with ChangeNotifier {
       if (!await AndroidPermissionManager.check(kManageExternalStorage)) {
         await AndroidPermissionManager.request(kManageExternalStorage);
       }
+        final res = true; // 自动确认
       // final res = await parent.target?.dialogManager
       //     .show<bool>((setState, close, context) {
       //   submit() => close(true);
@@ -417,11 +418,11 @@ class ServerModel with ChangeNotifier {
       //       const SizedBox(width: 10),
       //       Text(translate("Warning")),
       //     ]),
-      //     // content: Text(translate("android_service_will_start_tip")),
-      //     // actions: [
-      //     //   dialogButton("Cancel", onPressed: close, isOutline: true),
-      //     //   dialogButton("OK", onPressed: submit),
-      //     // ],
+      //     content: Text(translate("android_service_will_start_tip")),
+      //     actions: [
+      //       dialogButton("Cancel", onPressed: close, isOutline: true),
+      //       dialogButton("OK", onPressed: submit),
+      //     ],
       //     onSubmit: submit,
       //     onCancel: close,
       //   );
