@@ -1,10 +1,14 @@
 {
-  "id": "com.rustdesk.RustDesk",
+  "id": "com.rustdesk.白狐",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "rustdesk",
-  "cleanup": ["/include", "/lib/pkgconfig", "/share/gtk-doc"],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/gtk-doc"
+  ],
   "rename-desktop-file": "rustdesk.desktop",
   "rename-icon": "rustdesk",
   "modules": [
@@ -12,7 +16,9 @@
     {
       "name": "xdotool",
       "no-autogen": true,
-      "make-install-args": ["PREFIX=${FLATPAK_DEST}"],
+      "make-install-args": [
+        "PREFIX=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -24,7 +30,9 @@
     {
       "name": "pam",
       "buildsystem": "autotools",
-      "config-opts": ["--disable-selinux"],
+      "config-opts": [
+        "--disable-selinux"
+      ],
       "sources": [
         {
           "type": "archive",

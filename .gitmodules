@@ -5,7 +5,7 @@
 
 # git checkout master
 # git tag -f nightly
-# git push origin nightly --force
+# git push origin nightly --force 
 
 
 # git checkout master

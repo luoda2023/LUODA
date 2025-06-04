@@ -863,7 +863,7 @@ pub fn video_save_directory(root: bool) -> String {
         {
             let drive = std::env::var("SystemDrive").unwrap_or("C:".to_owned());
             let dir =
-                std::path::PathBuf::from(format!("{drive}\\ProgramData\\RustDesk\\recording",));
+                std::path::PathBuf::from(format!("{drive}\\ProgramData\\白狐\\recording",));
             return dir.to_string_lossy().to_string();
         }
     }

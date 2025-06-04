@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #
-# Script to build F-Droid release of RustDesk
+# Script to build F-Droid release of 白狐
 #
-# Copyright (C) 2024, The RustDesk Authors
+# Copyright (C) 2024, The 白狐 Authors
 #               2024, Vasyl Gello <vasek.gello@gmail.com>
 #
 
@@ -307,7 +307,7 @@ prebuild)
 		fi
 	fi
 
-	# Patch the RustDesk sources
+	# Patch the 白狐 sources
 
 	git apply res/fdroid/patches/*.patch
 
@@ -357,7 +357,7 @@ prebuild)
 		git reset
 	fi
 
-	# Install Flutter version for RustDesk library build
+	# Install Flutter version for 白狐 library build
 
 	prepare_flutter "${FLUTTER_VERSION}" "${HOME}/flutter"
 

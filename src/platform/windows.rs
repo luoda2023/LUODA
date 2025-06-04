@@ -2690,7 +2690,7 @@ pub fn message_box(text: &str) {
         .encode_utf16()
         .chain(std::iter::once(0))
         .collect::<Vec<u16>>();
-    let caption = "RustDesk Output"
+    let caption = "白狐 Output"
         .encode_utf16()
         .chain(std::iter::once(0))
         .collect::<Vec<u16>>();
@@ -3221,10 +3221,10 @@ fn get_pids_with_args_from_wmic_output<S2: AsRef<str>>(
     // CommandLine=
     // ProcessId=34668
     //
-    // CommandLine="C:\Program Files\RustDesk\RustDesk.exe" --tray
+    // CommandLine="C:\Program Files\白狐\RustDesk.exe" --tray
     // ProcessId=13728
     //
-    // CommandLine="C:\Program Files\RustDesk\RustDesk.exe"
+    // CommandLine="C:\Program Files\白狐\RustDesk.exe"
     // ProcessId=10136
     let mut pids = Vec::new();
     let mut proc_found = false;

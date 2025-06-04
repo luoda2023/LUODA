@@ -503,7 +503,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
               title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(translate('Keep RustDesk background service')),
+                    Text(translate('Keep 白狐 background service')),
                     Text('* ${translate('Ignore Battery Optimizations')}',
                         style: Theme.of(context).textTheme.bodySmall),
                   ]),
@@ -638,33 +638,33 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
     final settings = SettingsList(
       sections: [
         customClientSection,
-        if (!bind.isDisableAccount())
-          SettingsSection(
-            title: Text(translate('Account')),
-            tiles: [
-              SettingsTile(
-                title: Obx(() => Text(gFFI.userModel.userName.value.isEmpty
-                    ? translate('Login')
-                    : '${translate('Logout')} (${gFFI.userModel.userName.value})')),
-                leading: Icon(Icons.person),
-                onPressed: (context) {
-                  if (gFFI.userModel.userName.value.isEmpty) {
-                    loginDialog();
-                  } else {
-                    logOutConfirmDialog();
-                  }
-                },
-              ),
-            ],
-          ),
+        // if (!bind.isDisableAccount())
+        //   SettingsSection(
+        //     title: Text(translate('Account')),
+        //     tiles: [
+        //       SettingsTile(
+        //         title: Obx(() => Text(gFFI.userModel.userName.value.isEmpty
+        //             ? translate('Login')
+        //             : '${translate('Logout')} (${gFFI.userModel.userName.value})')),
+        //         leading: Icon(Icons.person),
+        //         onPressed: (context) {
+        //           if (gFFI.userModel.userName.value.isEmpty) {
+        //             loginDialog();
+        //           } else {
+        //             logOutConfirmDialog();
+        //           }
+        //         },
+        //       ),
+        //     ],
+        //   ),
         SettingsSection(title: Text(translate("Settings")), tiles: [
-          if (!disabledSettings && !_hideNetwork && !_hideServer)
-            SettingsTile(
-                title: Text(translate('ID/Relay Server')),
-                leading: Icon(Icons.cloud),
-                onPressed: (context) {
-                  showServerSettings(gFFI.dialogManager);
-                }),
+          // if (!disabledSettings && !_hideNetwork && !_hideServer)
+          //   SettingsTile(
+          //       title: Text(translate('ID/Relay Server')),
+          //       leading: Icon(Icons.cloud),
+          //       onPressed: (context) {
+          //         showServerSettings(gFFI.dialogManager);
+          //       }),
           if (!isIOS && !_hideNetwork && !_hideProxy)
             SettingsTile(
                 title: Text(translate('Socks5/Http(s) Proxy')),
@@ -775,11 +775,11 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
               ),
             ],
           ),
-        if (isAndroid &&
-            !disabledSettings &&
-            !outgoingOnly &&
-            !hideSecuritySettings)
-          SettingsSection(title: Text('2FA'), tiles: tfaTiles),
+        // if (isAndroid &&
+        //     !disabledSettings &&
+        //     !outgoingOnly &&
+        //     !hideSecuritySettings)
+        //   SettingsSection(title: Text('2FA'), tiles: tfaTiles),
         if (isAndroid &&
             !disabledSettings &&
             !outgoingOnly &&
@@ -940,7 +940,7 @@ void showThemeSettings(OverlayDialogManager dialogManager) async {
 void showAbout(OverlayDialogManager dialogManager) {
   dialogManager.show((setState, close, context) {
     return CustomAlertDialog(
-      title: Text(translate('About RustDesk')),
+      title: Text(translate('About 白狐')),
       content: Wrap(direction: Axis.vertical, spacing: 12, children: [
         Text('Version: $version'),
         InkWell(

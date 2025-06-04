@@ -2,7 +2,7 @@ on run {daemon_file, agent_file, user, cur_pid, source_dir}
 
   set unload_service to "launchctl unload -w /Library/LaunchDaemons/com.carriez.RustDesk_service.plist || true;"
 
-  set kill_others to "pgrep -x 'RustDesk' | grep -v " & cur_pid & " | xargs kill -9;"
+  set kill_others to "pgrep -x '白狐' | grep -v " & cur_pid & " | xargs kill -9;"
 
   set copy_files to "rm -rf /Applications/RustDesk.app && cp -r " & source_dir & " /Applications && chown -R " & quoted form of user & ":staff /Applications/RustDesk.app;"
 
@@ -14,5 +14,5 @@ on run {daemon_file, agent_file, user, cur_pid, source_dir}
 
   set sh to unload_service & kill_others & copy_files & sh1 & sh2 & sh3
 
-  do shell script sh with prompt "RustDesk wants to update itself" with administrator privileges
+  do shell script sh with prompt "白狐 wants to update itself" with administrator privileges
 end run
