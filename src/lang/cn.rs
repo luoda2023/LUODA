@@ -10,7 +10,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("connecting_status", "正在接入 白狐 网络..."),
         ("Enable service", "允许服务"),
         ("Start service", "开始会议"),
-        ("Service is running", "服务正在运行"),
+        ("Service is running", "会议正在进行中"),
         ("Service is not running", "会议未开始"),
         ("not_ready_status", "未就绪，请检查网络连接"),
         ("Control Remote Desktop", "控制远程桌面"),
