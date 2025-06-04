@@ -520,28 +520,28 @@ class ServerInfo extends StatelessWidget {
             //     style: textStyleHeading,
             //   )
             // ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
-                !showOneTime ? '-' : model.serverPasswd.value.text,
-                style: textStyleValue,
-              ),
-              !showOneTime
-                  ? SizedBox.shrink()
-                  : Row(children: [
-                      IconButton(
-                          visualDensity: VisualDensity.compact,
-                          icon: const Icon(Icons.refresh),
-                          onPressed: () => bind.mainUpdateTemporaryPassword()),
-                      IconButton(
-                          visualDensity: VisualDensity.compact,
-                          icon: Icon(Icons.copy_outlined),
-                          onPressed: () {
-                            copyToClipboard(
-                                model.serverPasswd.value.text.trim());
-                          })
-                    ])
-            ]).marginOnly(left: 40, bottom: 15),
-            ConnectionStateNotification()
+            // Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            //   Text(
+            //     !showOneTime ? '-' : model.serverPasswd.value.text,
+            //     style: textStyleValue,
+            //   ),
+            //   !showOneTime
+            //       ? SizedBox.shrink()
+            //       : Row(children: [
+            //           IconButton(
+            //               visualDensity: VisualDensity.compact,
+            //               icon: const Icon(Icons.refresh),
+            //               onPressed: () => bind.mainUpdateTemporaryPassword()),
+            //           IconButton(
+            //               visualDensity: VisualDensity.compact,
+            //               icon: Icon(Icons.copy_outlined),
+            //               onPressed: () {
+            //                 copyToClipboard(
+            //                     model.serverPasswd.value.text.trim());
+            //               })
+            //         ])
+            // ]).marginOnly(left: 40, bottom: 15),
+            // ConnectionStateNotification()
           ],
         ));
   }
@@ -665,12 +665,12 @@ class ConnectionManager extends StatelessWidget {
                                       client.unreadChatMessageCount)))
                     ],
                   ),
-                  client.authorized
-                      ? const SizedBox.shrink()
-                      : Text(
-                          translate("android_new_connection_tip"),
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ).marginOnly(bottom: 5),
+                  // client.authorized
+                  //     ? const SizedBox.shrink()
+                  //     : Text(
+                  //         translate("android_new_connection_tip"),
+                  //         style: Theme.of(context).textTheme.bodyMedium,
+                  //       ).marginOnly(bottom: 5),
                   client.authorized
                       ? _buildDisconnectButton(client)
                       : _buildNewConnectionHint(serverModel, client),

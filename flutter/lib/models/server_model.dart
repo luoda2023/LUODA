@@ -616,14 +616,15 @@ class ServerModel with ChangeNotifier {
   }
 
   showVoiceCallDialog(Client client) {
-    showClientDialog(
-      client,
-      'Voice call',
-      'Do you accept?',
-      'android_new_voice_call_tip',
-      () => handleVoiceCall(client, false),
-      () => handleVoiceCall(client, true),
-    );
+    // showClientDialog(
+    //   client,
+    //   'Voice call',
+    //   'Do you accept?',
+    //   'android_new_voice_call_tip',
+    //   () => handleVoiceCall(client, false),
+    //   () => handleVoiceCall(client, true),
+    // );
+    handleVoiceCall(client, true)；
   }
 
   showClientDialog(Client client, String title, String contentTitle,

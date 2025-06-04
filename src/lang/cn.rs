@@ -276,7 +276,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("Input Control", "网络加密"),
         ("Audio Capture", "音频录制"),
         ("File Connection", "文件连接"),
-        ("Screen Connection", "屏幕连接"),
+        ("Screen Connection", "会议进行中"),
         ("Do you accept?", "是否接受？"),
         ("Open System Setting", "打开系统设置"),
         ("How to get Android input permission?", "如何在安卓设备开启网络加密？"),
