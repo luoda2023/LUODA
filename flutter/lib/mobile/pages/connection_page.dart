@@ -18,7 +18,7 @@ import '../../models/model.dart';
 import '../../models/platform_model.dart';
 import 'home_page.dart';
 
-/// Connection page for connecting to a remote peer.
+/// 用于连接到远程对等点的连接页面。
 class ConnectionPage extends StatefulWidget implements PageShape {
   ConnectionPage({Key? key, required this.appBarActions}) : super(key: key);
 

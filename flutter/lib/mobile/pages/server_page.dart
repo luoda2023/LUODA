@@ -37,7 +37,7 @@ class ServerPage extends StatefulWidget implements PageShape {
 class _DropDownAction extends StatelessWidget {
   _DropDownAction();
 
-  // should only have one action
+  // 应该只有一个动作
   final actions = [
     PopupMenuButton<String>(
         tooltip: "",
@@ -512,14 +512,14 @@ class ServerInfo extends StatelessWidget {
                   })
             ]).marginOnly(left: 39, bottom: 10),
             // Password
-            Row(children: [
-              const Icon(Icons.lock_outline, color: Colors.grey, size: iconSize)
-                  .marginOnly(right: iconMarginRight),
-              Text(
-                translate('One-time Password'),
-                style: textStyleHeading,
-              )
-            ]),
+            // Row(children: [
+            //   const Icon(Icons.lock_outline, color: Colors.grey, size: iconSize)
+            //       .marginOnly(right: iconMarginRight),
+            //   Text(
+            //     translate('One-time Password'),
+            //     style: textStyleHeading,
+            //   )
+            // ]),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Text(
                 !showOneTime ? '-' : model.serverPasswd.value.text,
