@@ -175,7 +175,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("setup_server_tip", "如果需要更快连接速度，你可以选择自建服务器"),
         ("Too short, at least 6 characters.", "太短了，至少 6 个字符"),
         ("The confirmation is not identical.", "两次输入不匹配"),
-        ("Permissions", "权限"),
+        ("Permissions", "会议设置"),
         ("Accept", "接受"),
         ("Dismiss", "拒绝"),
         ("Disconnect", "断开会议"),
