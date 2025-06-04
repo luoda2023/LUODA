@@ -624,7 +624,7 @@ class ServerModel with ChangeNotifier {
     //   () => handleVoiceCall(client, false),
     //   () => handleVoiceCall(client, true),
     // );
-    handleVoiceCall(client, true)；
+    handleVoiceCall(client, true);
   }
 
   showClientDialog(Client client, String title, String contentTitle,
