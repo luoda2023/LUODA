@@ -435,17 +435,17 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             //   //                 });
             //   //               }))
             // ]),
-        initialValue: _enableDirectIPAccess,
-        onToggle: isOptionFixed(kOptionDirectServer)
-            ? null
-            : (_) async {
-                _enableDirectIPAccess = !_enableDirectIPAccess;
-                String value =
-                    bool2option(kOptionDirectServer, _enableDirectIPAccess);
-                await bind.mainSetOption(
-                    key: kOptionDirectServer, value: value);
-                setState(() {});
-              },
+        // initialValue: _enableDirectIPAccess,
+        // onToggle: isOptionFixed(kOptionDirectServer)
+        //     ? null
+        //     : (_) async {
+        //         _enableDirectIPAccess = !_enableDirectIPAccess;
+        //         String value =
+        //             bool2option(kOptionDirectServer, _enableDirectIPAccess);
+        //         await bind.mainSetOption(
+        //             key: kOptionDirectServer, value: value);
+        //         setState(() {});
+        //       },
       ),
       SettingsTile.switchTile(
         title: Row(
