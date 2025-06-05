@@ -59,7 +59,7 @@ class HomePageState extends State<HomePage> {
   //   _pages.add(SettingsPage());
   // }
   void initPages() {
-    _pages.clear();
+    _pages.clear();//界面导航
     if (!bind.isIncomingOnly()) {
       // _pages.add(ConnectionPage(appBarActions: []));
       _pages.add(ServerPage()); 

@@ -404,37 +404,37 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
         title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    Text(translate("Direct IP Access")),
-                    Offstage(
-                        offstage: !_enableDirectIPAccess,
-                        child: Text(
-                          '${translate("Local Address")}: $_localIP${_directAccessPort.isEmpty ? "" : ":$_directAccessPort"}',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        )),
-                  ])),
-              // Offstage(
-              //     offstage: !_enableDirectIPAccess,
-              //     child: IconButton(
-              //         padding: EdgeInsets.zero,
-              //         icon: Icon(
-              //           Icons.edit,
-              //           size: 20,
-              //         ),
-              //         onPressed: isOptionFixed(kOptionDirectAccessPort)
-              //             ? null
-              //             : () async {
-              //                 final port = await changeDirectAccessPort(
-              //                     _localIP, _directAccessPort);
-              //                 setState(() {
-              //                   _directAccessPort = port;
-              //                 });
-              //               }))
-            ]),
+            // children: [
+            //   Expanded(
+            //       child: Column(
+            //           crossAxisAlignment: CrossAxisAlignment.start,
+            //           children: [
+            //         Text(translate("Direct IP Access")),
+            //         Offstage(
+            //             offstage: !_enableDirectIPAccess,
+            //             child: Text(
+            //               '${translate("Local Address")}: $_localIP${_directAccessPort.isEmpty ? "" : ":$_directAccessPort"}',
+            //               style: Theme.of(context).textTheme.bodySmall,
+            //             )),
+            //       ])),
+            //   // Offstage(
+            //   //     offstage: !_enableDirectIPAccess,
+            //   //     child: IconButton(
+            //   //         padding: EdgeInsets.zero,
+            //   //         icon: Icon(
+            //   //           Icons.edit,
+            //   //           size: 20,
+            //   //         ),
+            //   //         onPressed: isOptionFixed(kOptionDirectAccessPort)
+            //   //             ? null
+            //   //             : () async {
+            //   //                 final port = await changeDirectAccessPort(
+            //   //                     _localIP, _directAccessPort);
+            //   //                 setState(() {
+            //   //                   _directAccessPort = port;
+            //   //                 });
+            //   //               }))
+            // ]),
         initialValue: _enableDirectIPAccess,
         onToggle: isOptionFixed(kOptionDirectServer)
             ? null
@@ -665,13 +665,13 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
           //       onPressed: (context) {
           //         showServerSettings(gFFI.dialogManager);
           //       }),
-          if (!isIOS && !_hideNetwork && !_hideProxy)
-            SettingsTile(
-                title: Text(translate('Socks5/Http(s) Proxy')),
-                leading: Icon(Icons.network_ping),
-                onPressed: (context) {
-                  changeSocks5Proxy();
-                }),
+          // if (!isIOS && !_hideNetwork && !_hideProxy)
+          //   SettingsTile(
+          //       title: Text(translate('Socks5/Http(s) Proxy')),
+          //       leading: Icon(Icons.network_ping),
+          //       onPressed: (context) {
+          //         changeSocks5Proxy();
+          //       }),
           if (!disabledSettings && !_hideNetwork && !_hideWebSocket)
             SettingsTile.switchTile(
               title: Text(translate('Use WebSocket')),
