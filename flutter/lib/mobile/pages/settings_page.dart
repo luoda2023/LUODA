@@ -447,54 +447,54 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
       //           setState(() {});
       //         },
       // ),
-      SettingsTile.switchTile(
-        title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Expanded(
-              //     child: Column(
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: [
-              //       Text(translate("auto_disconnect_option_tip")),
-              //       Offstage(
-              //           offstage: !_allowAutoDisconnect,
-              //           child: Text(
-              //             '${_autoDisconnectTimeout.isEmpty ? '10' : _autoDisconnectTimeout} min',
-              //             style: Theme.of(context).textTheme.bodySmall,
-              //           )),
-              //     ])),
-              Offstage(
-                  offstage: !_allowAutoDisconnect,
-                  child: IconButton(
-                      padding: EdgeInsets.zero,
-                      icon: Icon(
-                        Icons.edit,
-                        size: 20,
-                      ),
-                      onPressed: isOptionFixed(kOptionAutoDisconnectTimeout)
-                          ? null
-                          : () async {
-                              final timeout = await changeAutoDisconnectTimeout(
-                                  _autoDisconnectTimeout);
-                              setState(() {
-                                _autoDisconnectTimeout = timeout;
-                              });
-                            }))
-            ]),
-        initialValue: _allowAutoDisconnect,
-        onToggle: isOptionFixed(kOptionAllowAutoDisconnect)
-            ? null
-            : (_) async {
-                _allowAutoDisconnect = !_allowAutoDisconnect;
-                String value = bool2option(
-                    kOptionAllowAutoDisconnect, _allowAutoDisconnect);
-                await bind.mainSetOption(
-                    key: kOptionAllowAutoDisconnect, value: value);
-                setState(() {});
-              },
-      )
-    ];
+    //   SettingsTile.switchTile(
+    //     title: Row(
+    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: [
+    //           // Expanded(
+    //           //     child: Column(
+    //           //         crossAxisAlignment: CrossAxisAlignment.start,
+    //           //         children: [
+    //           //       Text(translate("auto_disconnect_option_tip")),
+    //           //       Offstage(
+    //           //           offstage: !_allowAutoDisconnect,
+    //           //           child: Text(
+    //           //             '${_autoDisconnectTimeout.isEmpty ? '10' : _autoDisconnectTimeout} min',
+    //           //             style: Theme.of(context).textTheme.bodySmall,
+    //           //           )),
+    //           //     ])),
+    //           Offstage(
+    //               offstage: !_allowAutoDisconnect,
+    //               child: IconButton(
+    //                   padding: EdgeInsets.zero,
+    //                   icon: Icon(
+    //                     Icons.edit,
+    //                     size: 20,
+    //                   ),
+    //                   onPressed: isOptionFixed(kOptionAutoDisconnectTimeout)
+    //                       ? null
+    //                       : () async {
+    //                           final timeout = await changeAutoDisconnectTimeout(
+    //                               _autoDisconnectTimeout);
+    //                           setState(() {
+    //                             _autoDisconnectTimeout = timeout;
+    //                           });
+    //                         }))
+    //         ]),
+    //     initialValue: _allowAutoDisconnect,
+    //     onToggle: isOptionFixed(kOptionAllowAutoDisconnect)
+    //         ? null
+    //         : (_) async {
+    //             _allowAutoDisconnect = !_allowAutoDisconnect;
+    //             String value = bool2option(
+    //                 kOptionAllowAutoDisconnect, _allowAutoDisconnect);
+    //             await bind.mainSetOption(
+    //                 key: kOptionAllowAutoDisconnect, value: value);
+    //             setState(() {});
+    //           },
+    //   )
+    // ];
     if (_hasIgnoreBattery) {
       enhancementsTiles.insert(
           0,
