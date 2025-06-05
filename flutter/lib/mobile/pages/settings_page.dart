@@ -494,7 +494,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
     //             setState(() {});
     //           },
     //   )
-    // ];
+     ];
     if (_hasIgnoreBattery) {
       enhancementsTiles.insert(
           0,
