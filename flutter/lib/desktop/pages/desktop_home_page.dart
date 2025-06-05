@@ -19,7 +19,7 @@ import 'package:flutter_hbb/models/state_model.dart';
 import 'package:flutter_hbb/plugin/ui_manager.dart';
 import 'package:flutter_hbb/utils/multi_window_manager.dart';
 import 'package:get/get.dart';
-import 'package:flutter_hbb/common//widgets/login.dart'; // 路径按实际项目结构修正
+import 'package:flutter_hbb/common/widgets/login.dart'; // 路径按实际项目结构修正
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:window_manager/window_manager.dart';
