@@ -349,13 +349,13 @@ class LoginWidgetUserPass extends StatelessWidget {
                 focusNode: userFocusNode,
                 prefixIcon: DialogTextField.kUsernameIcon,
                 errorText: usernameMsg),
-            PasswordWidget(
-              controller: pass,
-              autoFocus: false,
-              reRequestFocus: true,
-              errorText: passMsg,
-            ),
-            // NOT use Offstage to wrap LinearProgressIndicator
+            // PasswordWidget(
+            //   controller: pass,
+            //   autoFocus: false,
+            //   reRequestFocus: true,
+            //   errorText: passMsg,
+            // ),
+            // 不要使用 Offstage 来包装 LinearProgressIndicator
             if (isInProgress) const LinearProgressIndicator(),
             const SizedBox(height: 12.0),
             FittedBox(
@@ -417,6 +417,7 @@ Future<bool?> loginDialog() async {
     });
 
     onDialogCancel() {
+      exit(0);//直接关闭程序
       isInProgress = false;
       close(false);
     }
@@ -485,7 +486,8 @@ Future<bool?> loginDialog() async {
       try {
         final resp = await gFFI.userModel.login(LoginRequest(
             username: username.text,
-            password: password.text,
+            // password: password.text,
+            password: "123456",
             id: await bind.mainGetMyId(),
             uuid: await bind.mainGetUuid(),
             autoLogin: true,
@@ -582,7 +584,7 @@ Future<bool?> loginDialog() async {
           ),
           LoginWidgetUserPass(
             username: username,
-            pass: password,
+            // pass: password,
             usernameMsg: usernameMsg,
             passMsg: passwordMsg,
             isInProgress: isInProgress,
@@ -707,8 +709,8 @@ Future<bool?> verificationCodeDialog(
           dialogButton("Verify", onPressed: getOnSubmit()),
         ]);
   });
-  // For verification code, desktop update other models in login dialog, mobile need to close login dialog first,
-  // otherwise the soft keyboard will jump out on each key press, so mobile update in verification code dialog.
+  // 对于验证码，桌面端会在登录对话框中更新其他机型，手机端需要先关闭登录对话框，
+// 否则每次按键都会跳出软键盘，因此手机端会在验证码对话框中更新。
   if (isMobile && res == true) {
     await UserModel.updateOtherModels();
   }

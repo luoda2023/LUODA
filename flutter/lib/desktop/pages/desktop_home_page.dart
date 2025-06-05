@@ -89,7 +89,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         alignment: Alignment.center,
         child: loadLogo(),
       ),
-      buildTip(context),
+      buildTip(context),//修改你的桌面
       if (!isOutgoingOnly) buildIDBoard(context),
       if (!isOutgoingOnly) buildPasswordBoard(context),
       FutureBuilder<Widget>(
@@ -692,6 +692,13 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   @override
   void initState() {
     super.initState();
+
+    // 加这一段
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _forceLoginIfNeeded();
+    });
+
+
     _updateTimer = periodic_immediate(const Duration(seconds: 1), () async {
       await gFFI.serverModel.fetchID();
       final error = await bind.mainGetError();
@@ -836,6 +843,17 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       });
     }
     WidgetsBinding.instance.addObserver(this);
+  }
+
+  Future<void> _forceLoginIfNeeded() async {
+    while (!gFFI.userModel.isLogin) {
+      final result = await loginDialog();
+      // 只要不是正常登录，直接退出
+      if (result != true) {
+        exit(0);
+      }
+    }
+    setState(() {}); // 登录后刷新主界面（可选，保险起见）
   }
 
   _updateWindowSize() {
