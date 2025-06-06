@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="fox-application">
-  <id>com.rustdesk.白狐</id>
+  <id>com.rustdesk.LUODA</id>
   <developer id="com.rustdesk">
-    <name>白狐</name>
+    <name>LUODA</name>
   </developer>
   <launchable type="fox-id">com.rustdesk.RustDesk.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>AGPL-3.0-only</project_license>
-  <name>白狐</name>
+  <name>LUODA</name>
   <summary>Secure remote desktop access</summary>
   <description>
     <p>
-        白狐 is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
+        LUODA is a full-featured open source remote control alternative for self-hosting and security with minimal configuration.
     </p>
     <ul>
       <li> Works on Windows, macOS, Linux, iOS, Android, Web. </li>

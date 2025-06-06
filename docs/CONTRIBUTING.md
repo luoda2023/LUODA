@@ -1,11 +1,11 @@
-# Contributing to 白狐
+# Contributing to LUODA
 
-白狐 welcomes contribution from everyone. Here are the guidelines if you are
+LUODA welcomes contribution from everyone. Here are the guidelines if you are
 thinking of helping us:
 
 ## Contributions
 
-Contributions to 白狐 or its dependencies should be made in the form of GitHub
+Contributions to LUODA or its dependencies should be made in the form of GitHub
 pull requests. Each pull request will be reviewed by a core contributor
 (someone with permission to land patches) and either landed in the main tree or
 given feedback for changes that would be required. All contributions should
@@ -43,4 +43,4 @@ https://github.com/rustdesk/rustdesk/blob/master/docs/CODE_OF_CONDUCT.md
 
 ## Communication
 
-白狐 contributors frequent the [Discord](https://discord.gg/nDceKgxnkV).
+LUODA contributors frequent the [Discord](https://discord.gg/nDceKgxnkV).

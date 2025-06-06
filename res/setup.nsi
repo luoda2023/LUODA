@@ -1,4 +1,4 @@
-﻿Unicode true
+Unicode true
 
 ####################################################################
 # Includes
@@ -11,7 +11,7 @@
 ####################################################################
 # File Info
 
-!define PRODUCT_NAME "白狐"
+!define PRODUCT_NAME "LUODA"
 !define PRODUCT_DESCRIPTION "Installer for ${PRODUCT_NAME}"
 !define COPYRIGHT "Copyright © 2021"
 !define VERSION "1.1.6"
@@ -162,7 +162,7 @@ SectionEnd
 # Functions
 
 Function .onInit
-  # 白狐 is 64-bit only
+  # LUODA is 64-bit only
   ${IfNot} ${RunningX64}
     MessageBox MB_ICONSTOP "${PRODUCT_NAME} is 64-bit only!"
     Quit

@@ -1,4 +1,4 @@
-name: Build the flutter version of the 白狐
+name: Build the flutter version of the LUODA
 
 on:
   workflow_call:
@@ -164,7 +164,7 @@ jobs:
 
       - name: Build rustdesk
         run: |
-          # Windows: build 白狐
+          # Windows: build LUODA
           python3 .\build.py --portable --hwcodec --flutter --vram --skip-portable-pack
           mv ./flutter/build/windows/x64/runner/Release ./rustdesk
 
@@ -2070,7 +2070,7 @@ jobs:
             pushd flatpak
             git clone https://github.com/flathub/shared-modules.git --depth=1
             flatpak-builder --user --install-deps-from=flathub -y --force-clean --repo=repo ./build ./rustdesk.json
-            flatpak build-bundle ./repo rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}${{ matrix.job.suffix }}.flatpak com.rustdesk.白狐
+            flatpak build-bundle ./repo rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}${{ matrix.job.suffix }}.flatpak com.rustdesk.LUODA
 
       - name: Publish flatpak package
         uses: softprops/action-gh-release@v1

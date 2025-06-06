@@ -293,7 +293,7 @@ fn update_daemon_agent(agent_plist_file: String, update_source_dir: String, sync
 
 fn correct_app_name(s: &str) -> String {
     let s = s.replace("rustdesk", &crate::get_app_name().to_lowercase());
-    let s = s.replace("白狐", &crate::get_app_name());
+    let s = s.replace("LUODA", &crate::get_app_name());
     s
 }
 
@@ -742,8 +742,8 @@ pub fn update_me() -> ResultType<()> {
         let update_body = format!(
             r#"
 do shell script "
-pgrep -x '白狐' | grep -v {} | xargs kill -9 && rm -rf /Applications/RustDesk.app && cp -R '{}' /Applications/ && chown -R {}:staff /Applications/RustDesk.app
-" with prompt "白狐 wants to update itself" with administrator privileges
+pgrep -x 'LUODA' | grep -v {} | xargs kill -9 && rm -rf /Applications/RustDesk.app && cp -R '{}' /Applications/ && chown -R {}:staff /Applications/RustDesk.app
+" with prompt "LUODA wants to update itself" with administrator privileges
     "#,
             std::process::id(),
             app_dir,

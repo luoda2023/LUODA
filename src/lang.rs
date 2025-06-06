@@ -179,11 +179,11 @@ pub fn translate_locale(name: String, locale: &str) -> String {
             s = s.replace("{}", &value);
         }
         if !crate::is_rustdesk() {
-            if s.contains("白狐")
+            if s.contains("LUODA")
                 && !name.starts_with("upgrade_rustdesk_server_pro")
                 && name != "powered_by_me"
             {
-                s = s.replace("白狐", &crate::get_app_name());
+                s = s.replace("LUODA", &crate::get_app_name());
             }
         }
         s

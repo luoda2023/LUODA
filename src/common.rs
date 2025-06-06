@@ -921,7 +921,7 @@ pub fn get_app_name() -> String {
 
 #[inline]
 pub fn is_rustdesk() -> bool {
-    hbb_common::config::APP_NAME.read().unwrap().eq("白狐")
+    hbb_common::config::APP_NAME.read().unwrap().eq("LUODA")
 }
 
 #[inline]
@@ -990,7 +990,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "http://rustdesk.dicad.cn:21114".to_owned()
 }
 
 pub fn get_audit_server(api: String, custom: String, typ: String) -> String {
@@ -1817,7 +1817,7 @@ pub fn get_builtin_option(key: &str) -> String {
 
 #[inline]
 pub fn is_custom_client() -> bool {
-    get_app_name() != "白狐"
+    get_app_name() != "LUODA"
 }
 
 pub fn verify_login(raw: &str, id: &str) -> bool {

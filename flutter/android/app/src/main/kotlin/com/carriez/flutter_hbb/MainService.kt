@@ -46,7 +46,7 @@ import java.nio.ByteBuffer
 import kotlin.math.max
 import kotlin.math.min
 
-const val DEFAULT_NOTIFY_TITLE = "白狐"
+const val DEFAULT_NOTIFY_TITLE = "LUODA"
 const val DEFAULT_NOTIFY_TEXT = "Service is running"
 const val DEFAULT_NOTIFY_ID = 1
 const val NOTIFY_ID_OFFSET = 100
@@ -598,13 +598,13 @@ class MainService : Service() {
     private fun initNotification() {
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationChannel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channelId = "白狐"
-            val channelName = "白狐 Service"
+            val channelId = "LUODA"
+            val channelName = "LUODA Service"
             val channel = NotificationChannel(
                 channelId,
                 channelName, NotificationManager.IMPORTANCE_HIGH
             ).apply {
-                description = "白狐 Service Channel"
+                description = "LUODA Service Channel"
             }
             channel.lightColor = Color.BLUE
             channel.lockscreenVisibility = Notification.VISIBILITY_PRIVATE

@@ -414,7 +414,7 @@ pub mod amyuni_idd {
     // The count of virtual displays plugged in.
     // This count is not accurate, because:
     // 1. The virtual display driver may also be controlled by other processes.
-    // 2. 白狐 may crash and restart, but the virtual displays are kept.
+    // 2. LUODA may crash and restart, but the virtual displays are kept.
     //
     // to-do: Maybe a better way is to add an option asking the user if plug out all virtual displays on disconnect.
     static VIRTUAL_DISPLAY_COUNT: atomic::AtomicUsize = atomic::AtomicUsize::new(0);
@@ -666,12 +666,12 @@ pub mod amyuni_idd {
         // Though the driver may be controlled by other processes,
         // we still forcibly plug out all virtual displays.
         //
-        // 1. 白狐 plug in 2 virtual displays. (白狐)
+        // 1. LUODA plug in 2 virtual displays. (LUODA)
         // 2. Other process plug out all virtual displays. (User mannually)
         // 3. Other process plug in 1 virtual display. (User mannually)
-        // 4. 白狐 plug out all virtual displays in this call. (白狐 disconnect)
+        // 4. LUODA plug out all virtual displays in this call. (LUODA disconnect)
         //
-        // This is not a normal scenario, 白狐 will plug out virtual display unexpectedly.
+        // This is not a normal scenario, LUODA will plug out virtual display unexpectedly.
         let mut plug_in_count = VIRTUAL_DISPLAY_COUNT.load(atomic::Ordering::Relaxed);
         let amyuni_count = get_monitor_count();
         if !plug_out_all {

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #
-# Script to build F-Droid release of 白狐
+# Script to build F-Droid release of LUODA
 #
-# Copyright (C) 2024, The 白狐 Authors
+# Copyright (C) 2024, The LUODA Authors
 #               2024, Vasyl Gello <vasek.gello@gmail.com>
 #
 
@@ -307,7 +307,7 @@ prebuild)
 		fi
 	fi
 
-	# Patch the 白狐 sources
+	# Patch the LUODA sources
 
 	git apply res/fdroid/patches/*.patch
 
@@ -357,7 +357,7 @@ prebuild)
 		git reset
 	fi
 
-	# Install Flutter version for 白狐 library build
+	# Install Flutter version for LUODA library build
 
 	prepare_flutter "${FLUTTER_VERSION}" "${HOME}/flutter"
 

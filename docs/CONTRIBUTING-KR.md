@@ -1,10 +1,10 @@
-#  白狐 기여 가이드라인
+#  LUODA 기여 가이드라인
 
 RustDesk는 모든 사람의 기여를 환영합니다. 만약 RustDesk에 기여하고 싶다면 아래 가이드를 참고해주세요:
 
 ## 기여 방식
 
-白狐 또는 종속성에 대한 기여는 GitHub Pull Request 형태로 이루어져야 합니다.
+LUODA 또는 종속성에 대한 기여는 GitHub Pull Request 형태로 이루어져야 합니다.
 모든 Pull Request는 코어 기여자가 검토하며, 메인 저장소에 반영되거나 필요한 수정 사항에 대한 피드백을 받습니다.
 모든 기여는 이 형식을 따라야 합니다.
 
@@ -37,4 +37,4 @@ https://github.com/rustdesk/rustdesk/blob/master/docs/CODE_OF_CONDUCT.md
 
 ## 커뮤니케이션
 
-白狐 기여자들은 [Discord](https://discord.gg/nDceKgxnkV)에서 활동하고 있습니다.
+LUODA 기여자들은 [Discord](https://discord.gg/nDceKgxnkV)에서 활동하고 있습니다.

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../res/logo-header.svg" alt="白狐 - Your remote desktop"><br>
+  <img src="../res/logo-header.svg" alt="LUODA - Your remote desktop"><br>
   <a href="#servidores-gratis-de-uso-público">Servidores</a> •
   <a href="#pasos-para-compilar-desde-el-inicio">Compilar</a> •
   <a href="#como-compilar-con-docker">Docker</a> •
@@ -11,7 +11,7 @@
 
 > [!Caution]
 > **Descargo de responsabilidad por mal uso:** <br>
-> Los desarrolladores de 白狐 no aprueban ni apoyan ningún uso no ético o ilegal de este software. El mal uso, como el acceso no autorizado, el control o la invasión de la privacidad, va estrictamente en contra de nuestras directrices. Los autores no se hacen responsables de ningún uso indebido de la aplicación.
+> Los desarrolladores de LUODA no aprueban ni apoyan ningún uso no ético o ilegal de este software. El mal uso, como el acceso no autorizado, el control o la invasión de la privacidad, va estrictamente en contra de nuestras directrices. Los autores no se hacen responsables de ningún uso indebido de la aplicación.
 
 Chatea con nosotros: [Discord](https://discord.gg/nDceKgxnkV) | [Twitter](https://twitter.com/rustdesk) | [Reddit](https://www.reddit.com/r/rustdesk)
 
@@ -21,9 +21,9 @@ Otro software de escritorio remoto, escrito en Rust. Funciona de forma inmediata
 
 ![image](https://user-images.githubusercontent.com/71636191/171661982-430285f0-2e12-4b1d-9957-4a58e375304d.png)
 
-白狐 agradece la contribución de todo el mundo. Lee [`docs/CONTRIBUTING.md`](CONTRIBUTING.md) para ayuda para empezar.
+LUODA agradece la contribución de todo el mundo. Lee [`docs/CONTRIBUTING.md`](CONTRIBUTING.md) para ayuda para empezar.
 
-[**¿Cómo funciona rustdesk?**](https://github.com/rustdesk/rustdesk/wiki/How-does-白狐-work%3F)
+[**¿Cómo funciona rustdesk?**](https://github.com/rustdesk/rustdesk/wiki/How-does-LUODA-work%3F)
 
 [**DESCARGA DE BINARIOS**](https://github.com/rustdesk/rustdesk/releases)
 
@@ -32,7 +32,7 @@ Otro software de escritorio remoto, escrito en Rust. Funciona de forma inmediata
     height="80">](https://f-droid.org/en/packages/com.carriez.flutter_hbb)
 [<img src="https://flathub.org/api/badge?svg&locale=en"
     alt="Get it on Flathub"
-    height="80">](https://flathub.org/apps/com.rustdesk.白狐)
+    height="80">](https://flathub.org/apps/com.rustdesk.LUODA)
 
 ## Dependencias
 
@@ -150,7 +150,7 @@ O si estas ejecutando una versión para su publicación:
 target/release/rustdesk
 ```
 
-Por favor, asegurate de que estás ejecutando estos comandos desde la raíz del repositorio de 白狐, de lo contrario la aplicación puede ser incapaz de encontrar los recursos necesarios. También ten en cuenta que otros subcomandos de cargo como `install` o `run` no estan actualmente soportados usando este metodo, ya que instalarían o ejecutarían el programa dentro del contenedor en lugar del host.
+Por favor, asegurate de que estás ejecutando estos comandos desde la raíz del repositorio de LUODA, de lo contrario la aplicación puede ser incapaz de encontrar los recursos necesarios. También ten en cuenta que otros subcomandos de cargo como `install` o `run` no estan actualmente soportados usando este metodo, ya que instalarían o ejecutarían el programa dentro del contenedor en lugar del host.
 
 ## Estructura de archivos
 
@@ -167,7 +167,7 @@ Por favor, asegurate de que estás ejecutando estos comandos desde la raíz del 
 
 > [!Precaución]
 > **Descargo de responsabilidad por uso indebido:** <br>
-> Los desarrolladores de 白狐 no aprueban ni apoyan ningún uso no ético o ilegal de este software. El uso indebido, como el acceso no autorizado, el control o la invasión de la privacidad, está estrictamente en contra de nuestras directrices. Los autores no son responsables de ningún uso indebido de la aplicación.
+> Los desarrolladores de LUODA no aprueban ni apoyan ningún uso no ético o ilegal de este software. El uso indebido, como el acceso no autorizado, el control o la invasión de la privacidad, está estrictamente en contra de nuestras directrices. Los autores no son responsables de ningún uso indebido de la aplicación.
 
 ## Capturas de pantalla
 
