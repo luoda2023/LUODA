@@ -478,10 +478,10 @@ Future<bool?> loginDialog() async {
         setState(() => usernameMsg = translate('Username missed'));
         return;
       }
-      if (password.text.isEmpty) {
-        setState(() => passwordMsg = translate('Password missed'));
-        return;
-      }
+      // if (password.text.isEmpty) {
+      //   setState(() => passwordMsg = translate('Password missed'));
+      //   return;
+      // }
       curOP.value = 'rustdesk';
       setState(() => isInProgress = true);
       try {

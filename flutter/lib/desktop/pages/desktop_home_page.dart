@@ -91,26 +91,27 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         child: loadLogo(),
       ),
       buildTip(context),//修改你的桌面
-      if (!isOutgoingOnly) buildIDBoard(context),
-      if (!isOutgoingOnly) buildPasswordBoard(context),
-      FutureBuilder<Widget>(
-        future: Future.value(
-            Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
-        builder: (_, data) {
-          if (data.hasData) {
-            if (isIncomingOnly) {
-              if (isInHomePage()) {
-                Future.delayed(Duration(milliseconds: 300), () {
-                  _updateWindowSize();
-                });
-              }
-            }
-            return data.data!;
-          } else {
-            return const Offstage();
-          }
-        },
-      ),
+      if (!isOutgoingOnly) buildIDBoardUser(context),//显示用户名
+      // if (!isOutgoingOnly) buildIDBoard(context),//ID显示
+      // if (!isOutgoingOnly) buildPasswordBoard(context),//密码显示
+      // FutureBuilder<Widget>(
+      //   future: Future.value(
+      //       Obx(() => buildHelpCards(stateGlobal.updateUrl.value))),
+      //   builder: (_, data) {
+      //     if (data.hasData) {
+      //       if (isIncomingOnly) {
+      //         if (isInHomePage()) {
+      //           Future.delayed(Duration(milliseconds: 300), () {
+      //             _updateWindowSize();
+      //           });
+      //         }
+      //       }
+      //       return data.data!;
+      //     } else {
+      //       return const Offstage();
+      //     }
+      //   },
+      // ),
       buildPluginEntry(),
     ];
     if (isIncomingOnly) {
@@ -184,6 +185,21 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
       child: ConnectionPage(),
+    );
+  }
+
+  buildIDBoardUser(BuildContext context) {
+    // 获取当前用户名（假设UserModel.getLocalUserInfo()里有name字段）
+    final userInfo = UserModel.getLocalUserInfo();
+    final username = userInfo?['username'] ?? '';
+    return Container(
+      margin: const EdgeInsets.only(left: 20, right: 11),
+      height: 57,
+      alignment: Alignment.centerLeft,
+      child: Text(
+        '用户：$username',
+        style: TextStyle(fontSize: 22),
+      ),
     );
   }
 
@@ -437,7 +453,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       final isToUpdate = (isWindows || isMacOS) && bind.mainIsInstalled();
       String btnText = isToUpdate ? 'Click to update' : 'Click to download';
       GestureTapCallback onPressed = () async {
-        final Uri url = Uri.parse('https://rustdesk.com/download');
+        final Uri url = Uri.parse('https://www.xmtjca.cn//download');
         await launchUrl(url);
       };
       if (isToUpdate) {
